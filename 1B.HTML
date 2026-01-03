@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>hyperlink example</h2>
+<a href="https://www.google.com">
+visit google site
+</a>
+<br><br>
+<a href="https://www.amazon.com"target="_blank">
+  visit amazon site in new tab
+</a>
+</body>
+</html>
