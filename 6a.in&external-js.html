@@ -1,0 +1,38 @@
+Internal Js:
+<html>
+<head>
+<title>Internal JavaScript</title>
+<script>
+
+function example()
+{
+
+	alert(“Internal JavaScript”);
+
+
+}
+</script>
+</head>
+<body>
+<button onclick="example()">example</button>
+</body>
+</html>
+External Js:
+//Sample.js
+function example()
+{
+
+	alert(“External JavaScript”);
+
+}
+//Sample.html
+<html>
+<head>
+<title>External JavaScript</title>
+<script src="sample.js">
+</script>
+</head>
+<body>
+<button onclick="example()">sum</button>
+</body>
+</html>
