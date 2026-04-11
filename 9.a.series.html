@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions and Events</title>
+</head>
+<body>
+
+<h2>Enter a Number</h2>
+<input type="number" id="num"><br><br>
+
+<button onclick="factorial()">Factorial</button>
+<button onclick="fibonacci()">Fibonacci</button>
+<button onclick="primes()">Prime Numbers</button>
+<button onclick="palindrome()">Palindrome Check</button>
+
+<pre id="result"></pre>
+
+<script>
+
+// Factorial Function
+function factorial() {
+    let n = parseInt(document.getElementById("num").value);
+    let fact = 1;
+
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    document.getElementById("result").textContent =
+        "Factorial of " + n + " = " + fact;
+}
+
+// Fibonacci Function
+function fibonacci() {
+    let n = parseInt(document.getElementById("num").value);
+    let a = 0, b = 1, result = "Fibonacci series: ";
+
+    for (let i = 1; i <= n; i++) {
+        result += a + " ";
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+
+    document.getElementById("result").textContent = result;
+}
+
+// Prime Numbers Function
+function primes() {
+    let n = parseInt(document.getElementById("num").value);
+    let result = "Prime numbers: ";
+
+    for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            result += i + " ";
+        }
+    }
+
+    document.getElementById("result").textContent = result;
+}
+
+// Palindrome Function
+function palindrome() {
+    let n = document.getElementById("num").value;
+    let reversed = n.split("").reverse().join("");
+
+    if (n === reversed) {
+        document.getElementById("result").textContent =
+            n + " is a Palindrome";
+    } else {
+        document.getElementById("result").textContent =
+            n + " is NOT a Palindrome";
+    }
+}
+
+</script>
+
+</body>
+</html>
