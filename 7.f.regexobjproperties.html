@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RegExp Object Example</title>
+</head>
+<body>
+
+<h2>RegExp Object Properties and Methods</h2>
+
+<script>
+var pattern = /hello/i;
+var text = "Hello World";
+var result = pattern.test(text);
+document.write("Pattern: " + pattern + "<br>");
+document.write("Text: " + text + "<br>");
+document.write("Match Found: " + result + "<br>");
+var output = pattern.exec(text);
+document.write("Exec Result: " + output);
+
+</script>
+
+</body>
+</html>
