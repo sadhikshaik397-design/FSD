@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loop Types Example</title>
+</head>
+<body>
+
+<h2>Display Data using Different Loops</h2>
+<button onclick="showData()">Show Data</button>
+
+<pre id="output"></pre>
+
+<script>
+function showData() {
+
+    let result = "";
+
+    // Object
+    let student = {
+        name: "Bhanu",
+        age: 20,
+        course: "B.Tech"
+    };
+
+    // Array
+    let subjects = ["Maths", "Physics", "Programming"];
+
+    // for-in (Object)
+    result += "Using for-in (Object):\n";
+    for (let key in student) {
+        result += key + " : " + student[key] + "\n";
+    }
+
+    // forEach (Array)
+    result += "\nUsing forEach (Array):\n";
+    subjects.forEach(function(item) {
+        result += item + "\n";
+    });
+
+    // for-of (Array)
+    result += "\nUsing for-of (Array):\n";
+    for (let item of subjects) {
+        result += item + "\n";
+    }
+
+    document.getElementById("output").textContent = result;
+}
+</script>
+
+</body>
+</html>
