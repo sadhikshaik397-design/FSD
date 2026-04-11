@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Defined Object</title>
+</head>
+<body>
+
+<h2>User Defined Object Example</h2>
+
+<script>
+function Student(name, age, course) {
+    this.name = name;
+    this.age = age;
+    this.course = course;
+    this.display = function() {
+        return "Name: " + this.name + 
+               "<br>Age: " + this.age + 
+               "<br>Course: " + this.course;
+    };
+}
+var s1 = new Student("Bhanu", 19, "B.Tech");
+Object.defineProperty(s1, "studentInfo", {
+    get: function() {
+        return this.name + " - " + this.course;
+    }
+});
+document.write(s1.display() + "<br>");
+document.write("Accessor Output: " + s1.studentInfo);
+
+</script>
+
+</body>
+</html>
