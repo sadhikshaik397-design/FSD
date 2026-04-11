@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions and Events</title>
+</head>
+<body>
+
+<h2>Enter a Number</h2>
+<input type="number" id="num"><br><br>
+
+<button onclick="findFactorial()">Factorial</button>
+<button onclick="findFibonacci()">Fibonacci</button>
+<button onclick="findPrime()">Prime</button>
+<button onclick="checkPalindrome()">Palindrome</button>
+
+<pre id="result"></pre>
+
+<script>
+
+// Factorial
+function findFactorial() {
+    let n = parseInt(document.getElementById("num").value);
+    let fact = 1;
+
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    document.getElementById("result").textContent =
+        "Factorial: " + fact;
+}
+
+// Fibonacci
+function findFibonacci() {
+    let n = parseInt(document.getElementById("num").value);
+    let a = 0, b = 1;
+    let res = "Fibonacci: ";
+
+    for (let i = 1; i <= n; i++) {
+        res += a + " ";
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+
+    document.getElementById("result").textContent = res;
+}
+
+// Prime Numbers
+function findPrime() {
+    let n = parseInt(document.getElementById("num").value);
+    let res = "Prime Numbers: ";
+
+    for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            res += i + " ";
+        }
+    }
+
+    document.getElementById("result").textContent = res;
+}
+
+// Palindrome
+function checkPalindrome() {
+    let n = document.getElementById("num").value;
+    let rev = n.split("").reverse().join("");
+
+    if (n === rev) {
+        document.getElementById("result").textContent =
+            n + " is a Palindrome";
+    } else {
+        document.getElementById("result").textContent =
+            n + " is NOT a Palindrome";
+    }
+}
+
+</script>
+
+</body>
+</html>
